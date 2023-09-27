@@ -4,6 +4,7 @@ def transform_scan(distance: float, tilt_angle: float, pan_angle: float):
     # Create a point the measured distance away from the sensor in the sensors frame
     point = np.array([distance, 0, 0, 1])
 
+    # transform from the sensor to the 
     distance_to_tilt_servo = np.array([
         [1, 0, 0, 0.75],
         [0, 1, 0,    0],

@@ -29,11 +29,11 @@ int sensor_pin = A0;
 int tilt_pin = 10;
 int pan_pin = 11;
 
-int min_tilt = 75;
-int max_tilt = 150;
+int min_tilt = 80;
+int max_tilt = 145;
 
-int min_pan = 45;
-int max_pan = 135;
+int min_pan = 65;
+int max_pan = 115;
 
 Servo tilt_servo;  // create servo object to control a servo
 Servo pan_servo;
@@ -45,6 +45,9 @@ void setup() {
   Serial.begin(baudRate);     // NOTE2: Set the baudRate to 115200 for faster communication
   tilt_servo.attach(tilt_pin);          // attaches the servo on pin 11 to the servo object
   pan_servo.attach(pan_pin); 
+
+  tilt_servo.write(max_tilt+10);
+  delay(500);
 }
 
 int single_scan(int angle) {
@@ -95,4 +98,6 @@ void loop() {
       Serial.println(tilt);
     }
   }
+
+  Serial.println("break");
 }    
