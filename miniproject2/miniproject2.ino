@@ -74,7 +74,11 @@ void loop() {
       outputValue = single_scan(pan);
 
       // print the results to the Serial Monitor:
-      Serial.println(outputValue);
+      Serial.print(outputValue);
+      Serial.print(",");
+      Serial.print(pan);
+      Serial.print(",");
+      Serial.println(tilt);
     }
 
     tilt_servo.write(tilt-2);
@@ -84,7 +88,11 @@ void loop() {
       outputValue = single_scan(pan);
 
       // print the results to the Serial Monitor:
-      Serial.println(outputValue);
+      Serial.print(outputValue);
+      Serial.print(",");
+      Serial.print(pan);
+      Serial.print(",");
+      Serial.println(tilt);
     }
   }
 }    
