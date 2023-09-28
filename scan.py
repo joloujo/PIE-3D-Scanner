@@ -49,9 +49,4 @@ while True:
 with open('scan1.npy', 'wb') as f:
   np.save(f, points)
 
-fig = plt.figure()
-ax = fig.add_subplot(projection='3d')
-ax.scatter(points[:, 0], points[:, 1], points[:, 2])
-plt.show()
-
 serialPort.close()
